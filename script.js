@@ -120,7 +120,7 @@ function render(){
       box.appendChild(ul);
     }
 
-    if(!day.single&&!day.link){
+    if(!day.single||!day.link){
       const tip=document.createElement('div');
       tip.className='muted';
       tip.style.marginTop='8px';

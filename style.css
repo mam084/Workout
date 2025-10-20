@@ -95,6 +95,24 @@ details > div .btn {
   display: inline-block; 
 }
 
+/* Add space between <summary> and the content box */
+details > summary {
+  margin-bottom: 8px; /* helps most browsers */
+}
+
+/* Ensure the content box starts with some space even if summary margins collapse */
+details > div {
+  margin-top: 8px;
+}
+
+/* Extra spacing for the link button itself */
+details > div .btn {
+  margin-top: 8px;
+  display: inline-block;
+}
+
+
+
 #progressText { 
   color: var(--text); 
   font-weight: 700; 
