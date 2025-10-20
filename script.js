@@ -103,6 +103,8 @@ function render(){
   els.days.innerHTML = '';
   PLAN.forEach(day => {
     const done = state.completed[state.week].has(day.id);
+    const isLevel2 = !!state.localLevel2[day.id]; // compute ONCE per day
+
     const card = document.createElement('section');
     card.className = 'card';
 
@@ -120,13 +122,11 @@ function render(){
     `;
     card.appendChild(header);
 
-    const levelable = !(day.single);
     const levelRow = document.createElement('div');
     levelRow.className = 'row';
     levelRow.style.marginTop = '10px';
 
-    if (levelable){
-      const isLevel2 = !!state.localLevel2[day.id];
+    if (!day.single){
       levelRow.innerHTML = `
         <span class="badge">Level</span>
         <label class="switch">
@@ -144,7 +144,6 @@ function render(){
     details.innerHTML = `<summary>View exercises</summary>`;
     const box = document.createElement('div');
 
-    const isLevel2 = !!state.localLevel2[day.id];
     const items = day.single ? day.single : (isLevel2 ? day.level2 : day.level1);
     const ul = document.createElement('ul');
     ul.className = 'list';
