@@ -33,7 +33,6 @@ const PLAN = [
 ];
 
 const els = { days:null, progressBar:null, progressText:null, resetWeek:null, printBtn:null, themeBtn:null };
-
 let state = { week:1, completed:loadCompleted(), localLevel2:loadLocalLevels() };
 
 function loadLocalLevels(){ try{const raw=localStorage.getItem('seaside14_levels');return raw?JSON.parse(raw):{};}catch{return{};} }
@@ -75,14 +74,32 @@ function render(){
     const card=document.createElement('section');
     card.className='card';
 
-    card.innerHTML=`
-      <div class="row">
-        <div style="flex:1">
-          <div style="font-weight:800;font-size:1.05rem">${day.name} <span class="badge">${day.focus}</span></div>
-          <div class="why">${day.why}${day.note?` <span class='badge' style='margin-left:8px;background:var(--warn)'>Note: ${day.note}</span>`:''}</div>
-        </div>
-        <label class="checkbox"><input type="checkbox" ${done?'checked':''} data-complete="${day.id}" /><span>Done</span></label>
-      </div>`;
+    const header=document.createElement('div');
+    header.className='row';
+    header.innerHTML=`
+      <div style="flex:1 1 auto">
+        <div style="font-weight:800;font-size:1.05rem">${day.name} <span class="badge">${day.focus}</span></div>
+        <div class="why">${day.why}${day.note?` <span class='badge' style='margin-left:8px;background:var(--warn)'>Note: ${day.note}</span>`:''}</div>
+      </div>
+      <label class="checkbox">
+        <input type="checkbox" ${done?'checked':''} data-complete="${day.id}" />
+        <span>Done</span>
+      </label>`;
+    card.appendChild(header);
+
+    const levelRow=document.createElement('div');
+    levelRow.className='row';
+    levelRow.style.marginTop='10px';
+    if(!day.single){
+      levelRow.innerHTML=`
+        <span class="badge">Level</span>
+        <label class="switch">
+          <input type="checkbox" ${isLevel2?'checked':''} data-locallevel="${day.id}" />
+          <span class="slider"></span>
+        </label>
+        <span class="badge" id="lbl-${day.id}">${isLevel2?'2':'1'}</span>`;
+    } else levelRow.innerHTML='<span class="badge">All levels</span>';
+    card.appendChild(levelRow);
 
     const details=document.createElement('details');
     details.innerHTML='<summary>View details</summary>';
@@ -98,8 +115,17 @@ function render(){
     const items=day.single?day.single:(isLevel2?day.level2:day.level1);
     if(items){
       const ul=document.createElement('ul');
+      ul.className='list';
       items.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
       box.appendChild(ul);
+    }
+
+    if(!day.single&&!day.link){
+      const tip=document.createElement('div');
+      tip.className='muted';
+      tip.style.marginTop='8px';
+      tip.textContent=isLevel2?'Level 2 emphasizes challenge—reduce reps if form breaks.':'Level 1 prioritizes good form—pause as needed.';
+      box.appendChild(tip);
     }
 
     details.appendChild(box);
@@ -134,6 +160,15 @@ document.addEventListener('click',e=>{
 
 document.addEventListener('change',e=>{
   const t=e.target;
+  if(t.matches('[data-locallevel]')){
+    const id=t.getAttribute('data-locallevel');
+    const val=!!t.checked;
+    state.localLevel2[id]=val;
+    saveLocalLevels();
+    const lbl=document.getElementById('lbl-'+id);
+    if(lbl)lbl.textContent=val?'2':'1';
+    render();
+  }
   if(t.matches('[data-complete]')){
     const id=t.getAttribute('data-complete');
     if(t.checked)state.completed[state.week].add(id);
@@ -147,6 +182,7 @@ document.addEventListener('change',e=>{
   const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
   const useDark=saved?(saved==='dark'):prefersDark;
   if(useDark)document.body.classList.add('theme-dark');
-  if(els.themeBtn)els.themeBtn.textContent=`Theme: ${useDark?'Dark':'Light'}`;
+  const btn=document.getElementById('themeBtn');
+  if(btn)btn.textContent=`Theme: ${useDark?'Dark':'Light'}`;
   render();
 })();
