@@ -1,21 +1,17 @@
 /* ===== script.js ===== */
 const PLAN = [
 { id:"mon", name:"Monday", focus:"Core & Stability",
-why:"Improves balance, hitting control, and serve‑receive posture.",
+why:"Improves balance, hitting power, and serve‑receive posture.",
 level1:["3×20s plank","3×15 sit‑ups","3×10 bird dogs (each side)","2×20s side plank (each side)"],
 level2:["3×40s plank","3×20 V‑ups","3×10 slow mountain climbers (each side)","3×20s side plank with hip dips (each side)"] },
-{ id:"tue", name:"Tuesday", focus:"Practice + Plyometrics",
-why:"Builds jump explosiveness and reaction speed.",
-level1:["2×10 squat jumps","2×10 lateral hops (each side)","2×10 line jumps (forward/back)","2×15s wall sit"],
-level2:["3×10 tuck jumps","3×10 skater hops (each side)","3×10 broad jumps","3×20s wall sit"] },
+{ id:"tue", name:"Tuesday", focus:"Practice + Plyos",
+why:"Builds jump explosiveness and reaction speed."},
 { id:"wed", name:"Wednesday", focus:"Upper Body & Shoulder Health",
 why:"Strengthens hitting/serving muscles and reduces shoulder injury risk.",
-level1:["3×10 push‑ups (knees or wall if needed)","3×10 triceps dips (bench/chair)","3×10 T‑Y‑I raises (prone)","2×20s arm circles each direction"],
+level1:["3×10 push‑ups (knees or ledge if needed)","3×10 triceps dips (bench/chair)","3×10 T‑Y‑I raises (facedown)","2×20s arm circles each direction"],
 level2:["3×15 full push‑ups","3×12 triceps dips","3×12 T‑Y‑I raises","3×30s arm circles"] },
-{ id:"thu", name:"Thursday", focus:"Practice + Plyometrics",
-why:"Reinforces explosiveness. Keep volume light on practice days.",
-level1:["2×10 jump lunges (total)","2×20s side‑to‑side box taps (imaginary box)","5 rounds: 5–10m sprint → backpedal"],
-level2:["3×12 jump lunges (total)","3×30s box taps","6 rounds: 5–10m sprint → backpedal"] },
+{ id:"thu", name:"Thursday", focus:"Practice+ Plyos",
+why:"Builds jump explosiveness and reaction speed."},
 { id:"fri", name:"Friday", focus:"Flexibility & Yoga",
 why:"Aids recovery, balance, and injury prevention.",
 single:["Flow ×3: Forward fold → flat back → plank → cobra → downward dog → child’s pose","Pigeon pose – 30s each side","Seated hamstring – 30s each","Butterfly – 30s","Cat–cow – 30s","1–2 minutes deep breathing"] },
@@ -23,7 +19,7 @@ single:["Flow ×3: Forward fold → flat back → plank → cobra → downward d
 why:"Builds the base for jumping, movement, and balance.",
 level1:["3×10 squats","3×10 lunges (each leg)","3×15 calf raises","2×20s wall sit"],
 level2:["3×15 jump squats","3×12 split squats (each leg)","3×20 calf raises","3×30s wall sit"],
-note:"If you have a tournament this weekend, cut volume in half." },
+note:"Skip on a tournament day." },
 { id:"sun", name:"Sunday", focus:"Rest / Recovery / Light Movement",
 why:"Recharge physically and mentally.",
 single:["10‑minute walk","Light stretching routine","Foam roll (if available)","Or simply rest"] }
@@ -35,14 +31,12 @@ days: null,
 progressBar: null,
 progressText: null,
 levelLabel: null,
-globalLevel: null,
 resetWeek: null,
 printBtn: null,
 };
 
 let state = {
 week: 1,
-globalLevel2: false,
 completed: loadCompleted(), // {1:Set([...]),2:Set([...]),3:Set([...]),4:Set([...])}
 };
 
@@ -79,8 +73,8 @@ els.printBtn = document.getElementById('printBtn');
 document.querySelectorAll('[data-week]').forEach(btn=>{
 btn.setAttribute('aria-pressed', String(+btn.dataset.week===state.week));
 });
-els.globalLevel.checked = state.globalLevel2;
-els.levelLabel.textContent = state.globalLevel2 ? 'Level 2' : 'Level 1';
+// els.globalLevel.checked = state.globalLevel2;
+// els.levelLabel.textContent = state.globalLevel2 ? 'Level 2' : 'Level 1';
 
 els.days.innerHTML = '';
 PLAN.forEach(day => {
