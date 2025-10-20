@@ -1,346 +1,59 @@
+<!-- ===== index.html ===== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seaside 14 Black – One‑Month Growth Challenge</title>
-  <style>
-    :root{
-      --bg:#0f172a;        /* slate-900 */
-      --card:#111827;      /* gray-900 */
-      --muted:#94a3b8;     /* slate-400 */
-      --text:#e5e7eb;      /* gray-200 */
-      --accent:#38bdf8;    /* sky-400 */
-      --accent-2:#22d3ee;  /* cyan-400 */
-      --success:#34d399;   /* emerald-400 */
-      --warn:#f59e0b;      /* amber-500 */
-      --danger:#ef4444;    /* red-500 */
-      --ring: 0 0 0 3px rgba(34,211,238,.25);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.12), transparent),
-                  radial-gradient(800px 400px at 110% 10%, rgba(34,211,238,.12), transparent),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    header{
-      max-width:1100px;margin:32px auto 16px;padding:0 16px;
-    }
-    .title{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;letter-spacing:.3px;margin:0}
-    .subtitle{color:var(--muted);margin:.25rem 0 0}
-    .bar{
-      position:relative;overflow:hidden;border-radius:999px;height:12px;background:#0b1220;border:1px solid #1f2937
-    }
-    .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0%}
-
-    .wrap{max-width:1100px;margin:24px auto;padding:0 16px 64px}
-    .controls{
-      display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0 24px
-    }
-    .btn{
-      background:#0b1220;border:1px solid #1f2937;color:var(--text);
-      padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:600
-    }
-    .btn[aria-pressed="true"], .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#05202a;border-color:transparent}
-    .btn:focus-visible{outline:none;box-shadow:var(--ring)}
-    .ghost{background:transparent;border-color:#243041;color:var(--muted)}
-
-    .card{background:linear-gradient(180deg,#0b1220, #0a1322);border:1px solid #1f2937;border-radius:16px;padding:18px}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media (min-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-
-    details{border:1px solid #1f2937;border-radius:12px;padding:12px;background:#0b1220}
-    details summary{cursor:pointer;font-weight:700}
-    details[open]{border-color:#2b3b53}
-
-    .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .badge{padding:4px 10px;border-radius:999px;font-size:.85rem;border:1px solid #1f2937;background:#0b1220;color:var(--muted)}
-
-    .switch{position:relative;display:inline-block;width:46px;height:26px}
-    .switch input{display:none}
-    .slider{position:absolute;cursor:pointer;inset:0;background:#1f2937;border-radius:999px;transition:.2s}
-    .slider:before{content:"";position:absolute;height:20px;width:20px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s}
-    input:checked + .slider{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
-    input:checked + .slider:before{transform:translateX(20px)}
-
-    .muted{color:var(--muted)}
-    .why{font-size:.95rem;color:var(--muted);margin-top:2px}
-    .list{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:10px 0 0;padding-left:18px}
-    @media (max-width:680px){.list{grid-template-columns:1fr}}
-
-    .footer{margin-top:28px;color:var(--muted);font-size:.9rem}
-    .kudos{color:var(--success);font-weight:700}
-
-    .checkbox{
-      display:flex;align-items:center;gap:8px;user-select:none
-    }
-    .checkbox input{width:18px;height:18px}
-
-    .note{border-left:3px solid var(--accent);padding:10px 12px;background:#0b1220;border-radius:8px;margin:12px 0;color:var(--muted)}
-
-    @media print{
-      body{background:white;color:black}
-      header,.controls{break-inside:avoid}
-      .card{background:white;border-color:#ccc}
-      .btn,.switch,.footer,.note{display:none}
-      a{color:black}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seaside 14 Black – One‑Month Growth Challenge</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 class="title">Seaside 14 Black – One‑Month Growth Challenge</h1>
-    <p class="subtitle">Bodyweight‑only • 20–30 minutes • Optional & scalable • Focus on consistency, not perfection</p>
-    <div class="note">Coach’s note: This plan is a resource, not a requirement. Pick what fits your week. Celebrate effort and consistency.</div>
-  </header>
+<header>
+<h1 class="title">Seaside 14 Black – One‑Month Growth Challenge</h1>
+<p class="subtitle">Bodyweight‑only • 20–30 minutes • Optional & scalable • Focus on consistency, not perfection</p>
+<div class="note">Coach’s note: This plan is a resource, not a requirement. Pick what fits your week. Celebrate effort and consistency.</div>
+</header>
 
-  <div class="wrap">
-    <div class="controls" role="toolbar" aria-label="Planner controls">
-      <div class="row" style="gap:6px 12px">
-        <strong>Week:</strong>
-        <button class="btn" data-week="1" aria-pressed="true">1</button>
-        <button class="btn" data-week="2">2</button>
-        <button class="btn" data-week="3">3</button>
-        <button class="btn" data-week="4">4</button>
-      </div>
-      <div class="row" style="margin-left:auto">
-        <span class="badge">Global Level</span>
-        <label class="switch" title="Toggle Level 1 / Level 2">
-          <input id="globalLevel" type="checkbox" />
-          <span class="slider"></span>
-        </label>
-        <span id="levelLabel" class="badge" aria-live="polite">Level 1</span>
-        <button id="resetWeek" class="btn ghost" title="Clear this week's checkmarks">Reset week</button>
-        <button id="printBtn" class="btn primary" title="Print or save as PDF">Print / Save PDF</button>
-      </div>
-    </div>
+<div class="wrap">
+<div class="controls" role="toolbar" aria-label="Planner controls">
+<div class="row" style="gap:6px 12px">
+<strong>Week:</strong>
+<button class="btn" data-week="1" aria-pressed="true">1</button>
+<button class="btn" data-week="2">2</button>
+<button class="btn" data-week="3">3</button>
+<button class="btn" data-week="4">4</button>
+</div>
+<div class="row" style="margin-left:auto">
+<span class="badge">Global Level</span>
+<label class="switch" title="Toggle Level 1 / Level 2">
+<input id="globalLevel" type="checkbox" />
+<span class="slider"></span>
+</label>
+<span id="levelLabel" class="badge" aria-live="polite">Level 1</span>
+<button id="resetWeek" class="btn ghost" title="Clear this week's checkmarks">Reset week</button>
+<button id="printBtn" class="btn primary" title="Print or save as PDF">Print / Save PDF</button>
+</div>
+</div>
 
-    <div class="bar" aria-label="Weekly completion">
-      <span id="progressBar"></span>
-    </div>
-    <div class="row" style="justify-content:space-between;margin-top:8px">
-      <span class="muted">Progress this week: <strong id="progressText">0/7</strong></span>
-      <span class="muted">Tip: If you’re tired, do half. Movement beats skipping.</span>
-    </div>
+<div class="bar" aria-label="Weekly completion">
+<span id="progressBar"></span>
+</div>
+<div class="row" style="justify-content:space-between;margin-top:8px">
+<span class="muted">Progress this week: <strong id="progressText">0/7</strong></span>
+<span class="muted">Tip: If you’re tired, do half. Movement beats skipping.</span>
+</div>
 
-    <div id="days" class="grid" aria-live="polite"></div>
+<div id="days" class="grid" aria-live="polite"></div>
 
-    <div class="footer">Questions or tweaks? Talk to Coach. <span class="kudos">Effort compounds.</span></div>
-  </div>
+<div class="footer">Questions or tweaks? Talk to Coach. <span class="kudos">Effort compounds.</span></div>
+</div>
 
-  <script>
-    /* ---------------- Data ---------------- */
-    const PLAN = [
-      {
-        id:"mon", name:"Monday", focus:"Core & Stability",
-        why:"Improves balance, hitting control, and serve‑receive posture.",
-        level1:["3×20s plank","3×15 sit‑ups","3×10 bird dogs (each side)","2×20s side plank (each side)"],
-        level2:["3×40s plank","3×20 V‑ups","3×10 slow mountain climbers (each side)","3×20s side plank with hip dips (each side)"]
-      },
-      {
-        id:"tue", name:"Tuesday", focus:"Practice + Plyometrics",
-        why:"Builds jump explosiveness and reaction speed.",
-        level1:["2×10 squat jumps","2×10 lateral hops (each side)","2×10 line jumps (forward/back)","2×15s wall sit"],
-        level2:["3×10 tuck jumps","3×10 skater hops (each side)","3×10 broad jumps","3×20s wall sit"]
-      },
-      {
-        id:"wed", name:"Wednesday", focus:"Upper Body & Shoulder Health",
-        why:"Strengthens hitting/serving muscles and reduces shoulder injury risk.",
-        level1:["3×10 push‑ups (knees or wall if needed)","3×10 triceps dips (bench/chair)","3×10 T‑Y‑I raises (prone)","2×20s arm circles each direction"],
-        level2:["3×15 full push‑ups","3×12 triceps dips","3×12 T‑Y‑I raises","3×30s arm circles"]
-      },
-      {
-        id:"thu", name:"Thursday", focus:"Practice + Plyometrics",
-        why:"Reinforces explosiveness. Keep volume light on practice days.",
-        level1:["2×10 jump lunges (total)","2×20s side‑to‑side box taps (imaginary box)","5 rounds: 5–10m sprint → backpedal"],
-        level2:["3×12 jump lunges (total)","3×30s box taps","6 rounds: 5–10m sprint → backpedal"]
-      },
-      {
-        id:"fri", name:"Friday", focus:"Flexibility & Yoga",
-        why:"Aids recovery, balance, and injury prevention.",
-        single:["Flow ×3: Forward fold → flat back → plank → cobra → downward dog → child’s pose","Pigeon pose – 30s each side","Seated hamstring – 30s each","Butterfly – 30s","Cat–cow – 30s","1–2 minutes deep breathing"]
-      },
-      {
-        id:"sat", name:"Saturday", focus:"Legs & Lower Body Power",
-        why:"Builds the base for jumping, movement, and balance.",
-        level1:["3×10 squats","3×10 lunges (each leg)","3×15 calf raises","2×20s wall sit"],
-        level2:["3×15 jump squats","3×12 split squats (each leg)","3×20 calf raises","3×30s wall sit"],
-        note:"If you have a tournament this weekend, cut volume in half."
-      },
-      {
-        id:"sun", name:"Sunday", focus:"Rest / Recovery / Light Movement",
-        why:"Recharge physically and mentally.",
-        single:["10‑minute walk","Light stretching routine","Foam roll (if available)","Or simply rest"]
-      }
-    ];
+<noscript>
+<div style="max-width:800px;margin:1rem auto;padding:1rem;background:#fee2e2;color:#7f1d1d;border:1px solid #fecaca;border-radius:12px">
+This page needs JavaScript enabled to show checkboxes, progress, and toggles.
+</div>
+</noscript>
 
-    /* ---------------- State ---------------- */
-    const els = {
-      days: document.getElementById('days'),
-      progressBar: document.getElementById('progressBar'),
-      progressText: document.getElementById('progressText'),
-      levelLabel: document.getElementById('levelLabel'),
-      globalLevel: document.getElementById('globalLevel'),
-      resetWeek: document.getElementById('resetWeek'),
-      printBtn: document.getElementById('printBtn'),
-    };
-
-    let state = {
-      week: 1,          // 1..4
-      globalLevel2: false, // false => Level 1, true => Level 2
-      completed: loadCompleted(), // {weekNumber: Set(["mon","tue",...])}
-    };
-
-    function loadCompleted(){
-      try{
-        const raw = localStorage.getItem('seaside14_completed');
-        if(!raw) return {1:new Set(),2:new Set(),3:new Set(),4:new Set()};
-        const obj = JSON.parse(raw);
-        const out = {1:new Set(),2:new Set(),3:new Set(),4:new Set()};
-        for(const k of ['1','2','3','4']){
-          out[+k] = new Set(obj[k]||[]);
-        }
-        return out;
-      }catch(e){
-        return {1:new Set(),2:new Set(),3:new Set(),4:new Set()};
-      }
-    }
-    function saveCompleted(){
-      const serial = {1:[...state.completed[1]],2:[...state.completed[2]],3:[...state.completed[3]],4:[...state.completed[4]]};
-      localStorage.setItem('seaside14_completed', JSON.stringify(serial));
-    }
-
-    /* ---------------- Render ---------------- */
-    function render(){
-      // toolbar
-      document.querySelectorAll('[data-week]').forEach(btn=>{
-        btn.setAttribute('aria-pressed', String(+btn.dataset.week===state.week));
-      });
-      els.globalLevel.checked = state.globalLevel2;
-      els.levelLabel.textContent = state.globalLevel2 ? 'Level 2' : 'Level 1';
-
-      // days
-      els.days.innerHTML = '';
-      PLAN.forEach(day => {
-        const done = state.completed[state.week].has(day.id);
-        const card = document.createElement('section');
-        card.className = 'card';
-
-        const header = document.createElement('div');
-        header.className = 'row';
-        header.innerHTML = `
-          <div style="flex:1 1 auto">
-            <div style="font-weight:800;font-size:1.05rem">${day.name} <span class="badge">${day.focus}</span></div>
-            <div class="why">${day.why}${day.note?` <span class="badge" style="margin-left:8px;color:#fbbf24;border-color:#4b3d12">Note: ${day.note}</span>`:''}</div>
-          </div>
-          <label class="checkbox" title="Mark complete for this day">
-            <input type="checkbox" ${done?'checked':''} data-complete="${day.id}" />
-            <span>Done</span>
-          </label>
-        `;
-        card.appendChild(header);
-
-        const levelable = !(day.single);
-        const levelRow = document.createElement('div');
-        levelRow.className = 'row';
-        levelRow.style.marginTop = '10px';
-        if(levelable){
-          levelRow.innerHTML = `
-            <span class="badge">Level</span>
-            <label class="switch">
-              <input type="checkbox" ${state.globalLevel2?'checked':''} data-locallevel="${day.id}" />
-              <span class="slider"></span>
-            </label>
-            <span class="badge" id="lbl-${day.id}">${state.globalLevel2 ? '2' : '1'}</span>
-            <span class="muted">(Uses global by default — toggle per day if you like)</span>
-          `;
-        } else {
-          levelRow.innerHTML = `<span class="badge">All levels</span>`;
-        }
-        card.appendChild(levelRow);
-
-        const details = document.createElement('details');
-        details.innerHTML = `<summary>View exercises</summary>`;
-        const box = document.createElement('div');
-        const items = day.single ? day.single : (state.globalLevel2 ? day.level2 : day.level1);
-
-        const ul = document.createElement('ul');
-        ul.className = 'list';
-        items.forEach(txt=>{
-          const li = document.createElement('li');
-          li.textContent = txt; ul.appendChild(li);
-        });
-        box.appendChild(ul);
-
-        if(!day.single){
-          const tip = document.createElement('div');
-          tip.className = 'muted';
-          tip.style.marginTop = '8px';
-          tip.textContent = state.globalLevel2 ? 'Level 2 emphasizes challenge—reduce reps if form breaks.' : 'Level 1 prioritizes good form—pause as needed.';
-          box.appendChild(tip);
-        }
-
-        details.appendChild(box);
-        card.appendChild(details);
-        els.days.appendChild(card);
-      });
-
-      updateProgress();
-    }
-
-    function updateProgress(){
-      const count = state.completed[state.week].size;
-      els.progressText.textContent = `${count}/7`;
-      const pct = Math.round(count/7*100);
-      els.progressBar.style.width = pct + '%';
-      els.progressBar.setAttribute('aria-valuenow', String(pct));
-    }
-
-    /* ---------------- Events ---------------- */
-    document.querySelectorAll('[data-week]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{ state.week = +btn.dataset.week; render(); });
-    });
-
-    els.globalLevel.addEventListener('change', e=>{
-      state.globalLevel2 = !!e.target.checked; render();
-      localStorage.setItem('seaside14_level2', state.globalLevel2 ? '1' : '0');
-    });
-
-    els.resetWeek.addEventListener('click', ()=>{
-      if(confirm('Clear this week\'s completion checkmarks?')){
-        state.completed[state.week].clear();
-        saveCompleted(); render();
-      }
-    });
-
-    els.printBtn.addEventListener('click', ()=>window.print());
-
-    // Delegate for dynamic elements
-    document.addEventListener('change', (e)=>{
-      const target = e.target;
-      if(target.matches('[data-complete]')){
-        const id = target.getAttribute('data-complete');
-        if(target.checked) state.completed[state.week].add(id);
-        else state.completed[state.week].delete(id);
-        saveCompleted(); updateProgress();
-      }
-      if(target.matches('[data-locallevel]')){
-        const id = target.getAttribute('data-locallevel');
-        // Toggle label but keep using global exercises for simplicity; UI shows preference per day
-        const lbl = document.getElementById('lbl-'+id);
-        if(lbl) lbl.textContent = target.checked ? '2' : '1';
-      }
-    });
-
-    // Load saved global level
-    (function init(){
-      state.globalLevel2 = localStorage.getItem('seaside14_level2') === '1';
-      render();
-    })();
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
