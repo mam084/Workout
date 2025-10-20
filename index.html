@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seaside 14 Black – One-Month Growth Challenge</title>
+  <title>Seaside Travel Team — Weekly Workout</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1 class="title">Seaside 14 Black – One-Month Growth Challenge</h1>
-    <p class="subtitle">Bodyweight-only • 20–30 minutes • Optional & scalable • Focus on consistency, not perfection</p>
-    <div class="note">Coach’s note: This plan is a resource, not a requirement. Pick what fits your week. Celebrate effort and consistency.</div>
+    <h1 class="title">Seaside Travel Team — Weekly Workout</h1>
+    <p class="subtitle">Bodyweight-only • 20–30 minutes • Pick your Level tab • Focus on consistency, not perfection</p>
+    <div class="note">Coach’s note: Choose the level that fits you this week. This is a resource, not a requirement.</div>
   </header>
 
   <div class="wrap">
     <div class="controls" role="toolbar" aria-label="Planner controls">
       <div class="row" style="gap:6px 12px">
-        <strong>Week:</strong>
-        <button class="btn" data-week="1" aria-pressed="true">1</button>
-        <button class="btn" data-week="2">2</button>
-        <button class="btn" data-week="3">3</button>
-        <button class="btn" data-week="4">4</button>
+        <strong>Level:</strong>
+        <button class="btn" data-level="1" aria-pressed="true">1</button>
+        <button class="btn" data-level="2">2</button>
       </div>
       <div class="row" style="margin-left:auto">
-        <button id="themeBtn" class="btn ghost">Theme: Light</button>
-        <button id="resetWeek" class="btn ghost">Reset week</button>
-        <button id="printBtn" class="btn primary">Print / Save PDF</button>
+        <button id="themeBtn" class="btn ghost" title="Toggle theme">Theme: Light</button>
+        <button id="resetWeek" class="btn ghost" title="Clear this week's checkmarks">Reset week</button>
+        <button id="printBtn" class="btn primary" title="Print or save as PDF">Print / Save PDF</button>
       </div>
     </div>
 
@@ -43,7 +41,7 @@
   </div>
 
   <noscript>
-    <div class="noscript">This page needs JavaScript enabled to show checkboxes, progress, and toggles.</div>
+    <div class="noscript">This page needs JavaScript enabled to show checkboxes, progress, and tabs.</div>
   </noscript>
 
   <script src="script.js"></script>
