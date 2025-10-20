@@ -89,3 +89,13 @@ input:checked + .slider:before { transform: translateX(20px); }
   .card { border-color: #bbb; background: white; box-shadow: none; }
   a { color: black; text-decoration: underline; }
 }
+
+details > div .btn { 
+  margin-top: 8px; 
+  display: inline-block; 
+}
+
+#progressText { 
+  color: var(--text); 
+  font-weight: 700; 
+}

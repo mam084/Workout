@@ -90,7 +90,7 @@ function render(){
     const levelRow=document.createElement('div');
     levelRow.className='row';
     levelRow.style.marginTop='10px';
-    if(!day.single){
+    if(!day.single && !day.link){
       levelRow.innerHTML=`
         <span class="badge">Level</span>
         <label class="switch">
