@@ -1,53 +1,39 @@
-<!-- ===== index.html ===== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Seaside 14 Black – One‑Month Growth Challenge</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seaside 14 Black – Growth Plan</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-<h1 class="title">Seaside 14 Black – One‑Month Growth Challenge</h1>
-<p class="subtitle">Bodyweight‑only • Optional & scalable • Focus on consistency, not perfection</p>
-<div class="note">Coach’s note: This plan is a resource, not a requirement. Pick what fits your week. Celebrate effort and consistency.</div>
-</header>
+  <header>
+    <h1>🏐 Seaside 14 Black – One-Month Growth Plan</h1>
+    <p>Optional bodyweight plan designed to help our team build strength, stability, and explosiveness.</p>
+  </header>
 
-<div class="wrap">
-<div class="controls" role="toolbar" aria-label="Planner controls">
-<div class="row" style="gap:6px 12px">
-<strong>Week:</strong>
-<button class="btn" data-week="1" aria-pressed="true">1</button>
-<button class="btn" data-week="2">2</button>
-<button class="btn" data-week="3">3</button>
-<button class="btn" data-week="4">4</button>
-</div>
-<div class="row" style="margin-left:auto">
-<button id="resetWeek" class="btn ghost" title="Clear this week's checkmarks">Reset week</button>
-<button id="printBtn" class="btn primary" title="Print or save as PDF">Print / Save PDF</button>
-</div>
-</div>
+  <div class="controls" role="toolbar" aria-label="Planner controls">
+    <div class="row" style="gap:6px 12px">
+      <strong>Week:</strong>
+      <button class="btn" data-week="1" aria-pressed="true">1</button>
+      <button class="btn" data-week="2">2</button>
+      <button class="btn" data-week="3">3</button>
+      <button class="btn" data-week="4">4</button>
+    </div>
+    <div class="row" style="margin-left:auto">
+      <button id="themeBtn" class="btn ghost">Theme: Light</button>
+      <button id="resetWeek" class="btn ghost">Reset week</button>
+      <button id="printBtn" class="btn primary">Print / Save PDF</button>
+    </div>
+  </div>
 
-<div class="bar" aria-label="Weekly completion">
-<span id="progressBar"></span>
-</div>
-<div class="row" style="justify-content:space-between;margin-top:8px">
-<span class="muted">Progress this week: <strong id="progressText">0/7</strong></span>
-<span class="muted">Tip: If you’re tired, do half. Movement beats skipping.</span>
-</div>
+  <div class="bar">
+    <div id="progressBar" class="bar-inner" style="width:0%"></div>
+    <div id="progressText" class="bar-text">0/7</div>
+  </div>
 
-<div id="days" class="grid" aria-live="polite"></div>
+  <main id="days"></main>
 
-<div class="footer">Questions or tweaks? Talk to Coach. <span class="kudos">Effort compounds.</span></div>
-</div>
-
-<noscript>
-<div style="max-width:800px;margin:1rem auto;padding:1rem;background:#fee2e2;color:#7f1d1d;border:1px solid #fecaca;border-radius:12px">
-This page needs JavaScript enabled to show checkboxes, progress, and toggles.
-</div>
-</noscript>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
