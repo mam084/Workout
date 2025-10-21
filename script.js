@@ -2,7 +2,7 @@
 const PLAN = [
   { id:"mon", name:"Monday", focus:"Core & Stability",
     why:"Improves balance, hitting control, and serve-receive posture.",
-    level1:["3×20s plank","3×15 sit-ups","3×10 bird dogs (each side)","2×20s side plank (each side)"],
+    level1:["3×20s plank","3×15 sit-ups","2×20s side plank (each side)"],
     level2:["3×40s plank","3×20 V-ups","3×10 slow mountain climbers (each side)","3×20s side plank with hip dips (each side)"] },
 
   { id:"tue", name:"Tuesday", focus:"Practice Day",
@@ -11,8 +11,8 @@ const PLAN = [
 
   { id:"wed", name:"Wednesday", focus:"Upper Body & Shoulder Health",
     why:"Strengthens hitting/serving muscles and reduces shoulder injury risk.",
-    level1:["3×10 push-ups (knees or ledge if needed)","3×10 triceps dips (chair)","3×10 T-Y-I raises (facedown)","2×20s arm circles each direction"],
-    level2:["3×15 full push-ups","3×12 triceps dips","3×12 T-Y-I raises","3×30s arm circles"] },
+    level1:["3×10 push-ups (knees or ledge if needed)","3×10 triceps dips (chair)","2×20s arm circles each direction"],
+    level2:["4×10 full push-ups","4×10 triceps dips","3×12 T-Y-I raises","3×30s arm circles"] },
 
   { id:"thu", name:"Thursday", focus:"Practice Day",
     why:"Handled in team practice — protect legs/joints outside the gym.",
@@ -24,7 +24,7 @@ const PLAN = [
 
   { id:"sat", name:"Saturday", focus:"Legs & Lower Body Power",
     why:"Builds the base for jumping, movement, and balance.",
-    level1:["3×10 squats","3×10 lunges (each leg)","3×15 calf raises","2×20s wall sit"],
+    level1:["2×10 squats","3×15 calf raises","2×20s wall sit"],
     level2:["3×15 jump squats","3×12 split squats (each leg)","3×20 calf raises","3×30s wall sit"],
     note:"Skip on a tournament day." },
 
